@@ -98,21 +98,40 @@ export default function BarChartWithLine() {
         scales: {
           x: {
             offset: false,
-            grid: { display: false },
+            grid: {
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false
+            },
+            border: {
+              display: false
+            },
             ticks: { color: "#6b7280" },
           },
           yQty: {
             type: "linear",
             position: "left",
             title: { display: true, text: "Quantity" },
-            grid: { drawOnChartArea: false },
+            grid: {
+              drawOnChartArea: false,
+              display: false
+            },
+            border: {
+              display: false
+            },
             suggestedMin: 0,
           },
           yRp: {
             type: "linear",
             position: "right",
             title: { display: true, text: "Rupiah (RP)" },
-            grid: { drawOnChartArea: false },
+            grid: {
+              drawOnChartArea: false,
+              display: false
+            },
+            border: {
+              display: false
+            },
             suggestedMin: 0,
             ticks: {
               callback: (v) => (typeof v === "number" ? `Rp ${idr.format(v)}` : String(v)),
